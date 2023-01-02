@@ -27,7 +27,7 @@ public class Dev {
     }
 
     public double calcularTotalXp() {
-        this.conteudosConcluidos
+        return this.conteudosConcluidos
                 .stream()
                 .mapToDouble(Conteudo::calcularXp)
                 .sum();
@@ -41,12 +41,12 @@ public class Dev {
         this.nome = nome;
     }
 
-    public Set<Conteudo> getConteudosEstudados() {
-        return conteudosEstudados;
+    public Set<Conteudo> getConteudosInscritos() {
+        return conteudosInscritos;
     }
 
-    public void setConteudosEstudados(Set<Conteudo> conteudosEstudados) {
-        this.conteudosEstudados = conteudosEstudados;
+    public void setConteudosInscritos(Set<Conteudo> conteudosInscritos) {
+        this.conteudosInscritos = conteudosInscritos;
     }
 
     public Set<Conteudo> getConteudosConcluidos() {
@@ -61,11 +61,11 @@ public class Dev {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Dev dev)) return false;
-        return Objects.equals(getNome(), dev.getNome()) && Objects.equals(getConteudosEstudados(), dev.getConteudosEstudados()) && Objects.equals(getConteudosConcluidos(), dev.getConteudosConcluidos());
+        return Objects.equals(getNome(), dev.getNome()) && Objects.equals(getConteudosConcluidos(), dev.getConteudosConcluidos()) && Objects.equals(getConteudosConcluidos(), dev.getConteudosConcluidos());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getNome(), getConteudosEstudados(), getConteudosConcluidos());
+        return Objects.hash(getNome(), getConteudosConcluidos(), getConteudosConcluidos());
     }
 }
